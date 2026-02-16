@@ -2,7 +2,15 @@ import type { Expense } from '../types';
 import { CATEGORIES } from '../types';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
-import { Trash2 } from 'lucide-react';
+import { 
+  Trash2, 
+  Utensils, 
+  PartyPopper, 
+  Shirt, 
+  Stethoscope, 
+  Dumbbell, 
+  Home 
+} from 'lucide-react';
 import { Card } from './ui/Card';
 
 interface ExpenseListProps {
@@ -27,10 +35,15 @@ export function ExpenseList({ expenses, onDelete }: ExpenseListProps) {
           <div key={expense.id} className="relative group">
             <Card className="flex items-center gap-4 p-4">
               <div 
-                className="w-12 h-12 flex items-center justify-center neo-border"
+                className="w-12 h-12 flex items-center justify-center neo-border shrink-0"
                 style={{ backgroundColor: catInfo.color }}
               >
-                <span className="font-black">{expense.category[0].toUpperCase()}</span>
+                {expense.category === 'comida' && <Utensils size={24} />}
+                {expense.category === 'ocio' && <PartyPopper size={24} />}
+                {expense.category === 'ropa' && <Shirt size={24} />}
+                {expense.category === 'salud' && <Stethoscope size={24} />}
+                {expense.category === 'deporte' && <Dumbbell size={24} />}
+                {expense.category === 'hogar' && <Home size={24} />}
               </div>
               
               <div className="flex-1 min-w-0">

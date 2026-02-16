@@ -11,8 +11,8 @@ export function ExpenseStats({ expenses }: ExpenseStatsProps) {
   
   const weeklyTotal = expenses
     .filter(e => isWithinInterval(new Date(e.date), {
-      start: startOfWeek(now, { weekStartsOn: 1 }),
-      end: endOfWeek(now, { weekStartsOn: 1 })
+      start: new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000),
+      end: now
     }))
     .reduce((sum, e) => sum + e.amount, 0);
 
