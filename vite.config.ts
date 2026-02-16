@@ -5,6 +5,10 @@ import { VitePWA } from 'vite-plugin-pwa'
 // https://vite.dev/config/
 export default defineConfig(({ command }) => ({
   base: command === 'build' ? '/Moneira/' : '/',
+  build: {
+    outDir: 'docs',
+    emptyOutDir: true
+  },
   plugins: [
     react(),
     VitePWA({
