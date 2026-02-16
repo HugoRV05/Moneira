@@ -40,7 +40,7 @@ function App() {
         </div>
         <div className="w-16 h-16 bg-white neo-border neo-shadow overflow-hidden flex items-center justify-center shrink-0">
           <img 
-            src={`${import.meta.env.BASE_URL}Gemini_Generated_Image_4geo1h4geo1h4geo.webp`} 
+            src={`${import.meta.env.BASE_URL}icon.webp`} 
             alt="Moneira Logo" 
             className="w-full h-full object-cover"
           />

@@ -30,13 +30,25 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+html, body {
+  background-color: var(--color-yellow);
+  overscroll-behavior-y: none; /* Prevent white background bounce */
+}
+
 body {
   font-family: var(--font-main);
-  background-color: var(--color-yellow);
   color: var(--color-black);
   line-height: 1.5;
   overflow-x: hidden;
   padding-bottom: env(safe-area-inset-bottom);
+  user-select: none; /* Feel like a native app */
+  -webkit-user-select: none;
+}
+
+/* Allow selection in inputs */
+input, textarea, select {
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 button {
@@ -195,6 +207,7 @@ textarea {
   max-width: 500px;
   margin: 0 auto;
   padding: 1rem;
+  padding-top: env(safe-area-inset-top); /* Handle notches */
 }
 
 h1,

@@ -21,7 +21,25 @@ export default defineConfig(({ command }) => ({
         background_color: '#FFD700',
         display: 'standalone',
         orientation: 'portrait',
-        icons: []
+        icons: [
+          {
+            src: 'icon.webp',
+            sizes: '512x512',
+            type: 'image/webp'
+          },
+          {
+            src: 'icon-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any'
+          },
+          {
+            src: 'icon-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
+          }
+        ]
       }
     })
   ],
