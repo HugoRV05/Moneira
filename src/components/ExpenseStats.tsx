@@ -1,5 +1,5 @@
 import type { Expense } from '../types';
-import { startOfWeek, startOfMonth, isWithinInterval, endOfWeek, endOfMonth } from 'date-fns';
+import { startOfMonth, isWithinInterval, endOfMonth } from 'date-fns';
 import { Card } from './ui/Card';
 
 interface ExpenseStatsProps {
