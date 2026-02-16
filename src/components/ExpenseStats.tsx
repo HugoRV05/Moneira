@@ -29,7 +29,7 @@ export function ExpenseStats({ expenses }: ExpenseStatsProps) {
         <p className="text-xs font-black uppercase opacity-60 mb-1">Esta Semana</p>
         <p className="text-2xl font-black">{weeklyTotal.toFixed(2)}€</p>
       </Card>
-      <Card className="bg-blue text-white">
+      <Card className="bg-blue">
         <p className="text-xs font-black uppercase opacity-80 mb-1">Este Mes</p>
         <p className="text-2xl font-black">{monthlyTotal.toFixed(2)}€</p>
       </Card>

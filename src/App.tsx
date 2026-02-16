@@ -60,7 +60,7 @@ function App() {
       {!isFormOpen && (
         <Button 
           onClick={() => setIsFormOpen(true)}
-          className="fixed bottom-8 right-4 w-16 h-16 rounded-none p-0 flex items-center justify-center neo-shadow-lg bg-black text-white z-50"
+          className="fixed bottom-8 right-4 w-16 h-16 rounded-none p-0 flex items-center justify-center neo-shadow-lg bg-black z-50"
         >
           <Plus size={32} />
         </Button>
