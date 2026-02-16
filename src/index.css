@@ -156,7 +156,9 @@ textarea {
 
 .bg-black { background-color: var(--color-black); }
 .bg-white { background-color: var(--color-white); }
+.bg-blue { background-color: var(--color-blue); }
 .bg-yellow-400 { background-color: var(--color-yellow); }
+.bg-red-500 { background-color: #ef4444; }
 .text-white { color: var(--color-white); }
 .text-black { color: var(--color-black); }
 
