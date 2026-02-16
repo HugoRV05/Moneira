@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/Moneira/',
+  base: process.env.NODE_ENV === 'production' ? '/Moneira/' : '/',
   plugins: [
     react(),
     VitePWA({

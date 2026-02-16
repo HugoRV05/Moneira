@@ -38,7 +38,7 @@ function App() {
           <h1 className="text-4xl text-black">Moneira</h1>
           <p className="text-sm font-black uppercase opacity-60">Control Erasmus 2026</p>
         </div>
-        <div className="w-14 h-14 bg-white neo-border neo-shadow overflow-hidden flex items-center justify-center">
+        <div className="w-16 h-16 bg-white neo-border neo-shadow overflow-hidden flex items-center justify-center shrink-0">
           <img 
             src={`${import.meta.env.BASE_URL}Gemini_Generated_Image_4geo1h4geo1h4geo.webp`} 
             alt="Moneira Logo" 
