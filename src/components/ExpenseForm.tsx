@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import type { Expense, Category } from '../types';
 import { CATEGORIES } from '../types';
 import { Button } from './ui/Button';
@@ -10,13 +10,13 @@ interface ExpenseFormProps {
   onCancel: () => void;
 }
 
-export const ExpenseForm: React.FC<ExpenseFormProps> = ({ onSave, onCancel }) => {
+export function ExpenseForm({ onSave, onCancel }: ExpenseFormProps) {
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState<Category>('comida');
   const [note, setNote] = useState('');
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!amount || isNaN(Number(amount))) return;
 
@@ -106,4 +106,4 @@ export const ExpenseForm: React.FC<ExpenseFormProps> = ({ onSave, onCancel }) =>
       </div>
     </div>
   );
-};
+}

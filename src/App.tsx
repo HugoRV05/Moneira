@@ -6,6 +6,7 @@ import { ExpenseList } from './components/ExpenseList';
 import { ExpenseStats } from './components/ExpenseStats';
 import { Toast } from './components/Toast';
 import { Button } from './components/ui/Button';
+import type { Expense } from './types';
 
 function App() {
   const { 
@@ -19,7 +20,7 @@ function App() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [showToast, setShowToast] = useState(false);
 
-  const handleSave = (expense: any) => {
+  const handleSave = (expense: Expense) => {
     addExpense(expense);
     setIsFormOpen(false);
   };

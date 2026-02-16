@@ -1,4 +1,4 @@
-import React from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -6,16 +6,17 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'danger';
+  children: ReactNode;
 }
 
-export const Button: React.FC<ButtonProps> = ({ 
+export function Button({ 
   children, 
   className, 
   variant = 'primary', 
   ...props 
-}) => {
+}: ButtonProps) {
   const variants = {
     primary: 'bg-white',
     secondary: 'bg-[var(--color-blue)] text-white',
@@ -30,4 +31,4 @@ export const Button: React.FC<ButtonProps> = ({
       {children}
     </button>
   );
-};
+}
