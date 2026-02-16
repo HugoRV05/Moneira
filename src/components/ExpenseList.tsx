@@ -46,12 +46,12 @@ export function ExpenseList({ expenses, onDelete }: ExpenseListProps) {
                 {expense.category === 'hogar' && <Home size={24} />}
               </div>
               
-              <div className="flex-1 min-w-0">
-                <div className="flex justify-between items-start">
-                  <h3 className="truncate text-lg leading-tight uppercase font-bold">
+              <div className="flex-1 min-w-0 overflow-hidden">
+                <div className="flex justify-between items-start gap-2">
+                  <h3 className="truncate text-lg leading-tight uppercase font-black">
                     {expense.note || catInfo.label}
                   </h3>
-                  <span className="text-xl font-black">
+                  <span className="text-xl font-black shrink-0">
                     -{expense.amount.toFixed(2)}€
                   </span>
                 </div>
