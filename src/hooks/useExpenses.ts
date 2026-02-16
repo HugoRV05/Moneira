@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { Expense } from '../types';
+import { INITIAL_EXPENSES } from '../data/seedData';
 
 const STORAGE_KEY = 'contas_expenses';
 
@@ -7,7 +8,7 @@ export function useExpenses() {
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [lastDeleted, setLastDeleted] = useState<Expense | null>(null);
 
-  // Load from localStorage
+  // Load from localStorage or seed
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
@@ -15,13 +16,19 @@ export function useExpenses() {
         setExpenses(JSON.parse(saved));
       } catch (e) {
         console.error('Failed to load expenses', e);
+        setExpenses(INITIAL_EXPENSES);
       }
+    } else {
+      // First run: use seed data
+      setExpenses(INITIAL_EXPENSES);
     }
   }, []);
 
   // Save to localStorage
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(expenses));
+    if (expenses.length > 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(expenses));
+    }
   }, [expenses]);
 
   const addExpense = useCallback((expense: Expense) => {
