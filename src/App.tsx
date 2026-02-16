@@ -62,7 +62,7 @@ function App() {
           onClick={() => setIsFormOpen(true)}
           className="fixed bottom-8 right-4 w-16 h-16 rounded-none p-0 flex items-center justify-center neo-shadow-lg bg-yellow-400 z-50"
         >
-          <Plus size={32} />
+          <Plus size={44} />
         </Button>
       )}
 
