@@ -29,6 +29,8 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
+      - name: Debug - List Files
+        run: ls -R
       - name: Install dependencies
         run: npm install
       - name: Build
