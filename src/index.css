@@ -136,7 +136,14 @@ textarea {
 .shadow-none { box-shadow: none; }
 
 .focus\:outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
-.focus\:bg-blue-50:focus { background-color: #eff6ff; }
+.block { display: block; }
+.transition-all { transition: all 0.2s ease; }
+
+.bg-black { background-color: var(--color-black); }
+.bg-white { background-color: var(--color-white); }
+.bg-yellow-400 { background-color: var(--color-yellow); }
+.text-white { color: var(--color-white); }
+.text-black { color: var(--color-black); }
 
 .neo-border {
   border: var(--border-width) solid var(--color-black);
